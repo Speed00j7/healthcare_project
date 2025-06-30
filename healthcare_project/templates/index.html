@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthAssist - AI Health Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <i class="fas fa-heartbeat"></i>
+                <h1>HealthAssist</h1>
+            </div>
+            <p class="tagline">Your AI-powered health assistant</p>
+        </header>
+
+        <main>
+            <div class="input-section">
+                <h2>Describe Your Symptoms</h2>
+                <p class="instruction">Please provide detailed information about what you're experiencing</p>
+                <textarea id="symptoms" placeholder="Example: I've had a persistent headache for 3 days, along with mild fever and fatigue..."></textarea>
+                <button id="submit-btn">Get Health Advice <i class="fas fa-arrow-right"></i></button>
+                <div id="loading" class="hidden">
+                    <div class="spinner"></div>
+                    <p>Analyzing your symptoms...</p>
+                </div>
+            </div>
+
+            <div class="results-section hidden" id="results">
+                <div class="results-header">
+                    <h2>Health Analysis</h2>
+                    <button id="new-search-btn"><i class="fas fa-redo"></i> New Search</button>
+                </div>
+                <div class="results-content" id="health-advice">
+                    <!-- Results will be displayed here -->
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>HealthAssist is not a substitute for professional medical advice, diagnosis, or treatment. Always consult with a qualified healthcare provider.</p>
+            <p class="copyright">© 2023 HealthAssist. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

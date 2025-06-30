@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthAssist - AI Health Assistant</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Internal CSS for login page */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        .login-container {
+            max-width: 400px;
+            margin: 100px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .login-container h2 {
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+        .login-container input[type="text"],
+        .login-container input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .login-container button {
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .login-container button:hover {
+            background-color: #c0392b;
+        }
+    </style>
+</head>
+<body>
+    <!-- Fake Login Page -->
+    <div class="login-container" id="login-page">
+        <h2>Login to HealthAssist</h2>
+        <input type="text" id="username" placeholder="Username">
+        <input type="password" id="password" placeholder="Password">
+        <button id="login-btn">Login</button>
+    </div>
+
+    <!-- Original Page Content -->
+    <div class="container hidden" id="main-content">
+        <header>
+            <div class="logo">
+                <i class="fas fa-heartbeat"></i>
+                <h1>HealthAssist</h1>
+            </div>
+            <p class="tagline">Your AI-powered health assistant</p>
+        </header>
+
+        <main>
+            <div class="input-section">
+                <h2>Describe Your Symptoms</h2>
+                <p class="instruction">Please provide detailed information about what you're experiencing</p>
+                <textarea id="symptoms" placeholder="Example: I've had a persistent headache for 3 days, along with mild fever and fatigue..."></textarea>
+                <button id="submit-btn">Get Health Advice <i class="fas fa-arrow-right"></i></button>
+                <div id="loading" class="hidden">
+                    <div class="spinner"></div>
+                    <p>Analyzing your symptoms...</p>
+                </div>
+            </div>
+
+            <div class="results-section hidden" id="results">
+                <div class="results-header">
+                    <h2>Health Analysis</h2>
+                    <button id="new-search-btn"><i class="fas fa-redo"></i> New Search</button>
+                </div>
+                <div class="results-content" id="health-advice">
+                    <!-- Results will be displayed here -->
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>HealthAssist is not a substitute for professional medical advice, diagnosis, or treatment. Always consult with a qualified healthcare provider.</p>
+            <p class="copyright">© 2023 HealthAssist. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Internal JavaScript for login functionality
+        document.getElementById('login-btn').addEventListener('click', function() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Simple validation (for demonstration purposes)
+            if (username === 'admin' && password === 'password') {
+                alert('Login successful!');
+                document.getElementById('login-page').classList.add('hidden');
+                document.getElementById('main-content').classList.remove('hidden');
+            } else {
+                alert('Invalid credentials. Please try again.');
+            }
+        });
+    </script>
+</body>
+</html>
